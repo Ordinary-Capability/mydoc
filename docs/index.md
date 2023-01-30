@@ -14,9 +14,10 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
     mkdocs.yml    # The configuration file.
     docs/
         index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+        
 
 ## fy12b image build
+### Bootloader 
 ```
 make CROSS_COMPILE=aarch64-fullhan-linux-gnu-   PLAT=fullhan SPD=opteed BL32=/home/FULLHAN/zhengk315/fy12b/tee-pager_v2.bin  BL33=/home/FULLHAN/zhengk315/fy12b/u-boot-dtb.bin  all fip
 
@@ -37,11 +38,9 @@ dd if=fip.bin of=atf-tee-spl.img  bs=64k seek=2
 
 dd if=u-boot-spl-header.img of=bl1-with-spl.img  bs=64k
 dd if=bl1.img of=bl1-with-spl.img  bs=64k seek=1
-
-                logger.DebugFormat("Connect sockets from {0}:{1} to {2}:{3}",
-                    ((IPEndPoint)Socket.LocalEndPoint).Address.ToString(), ((IPEndPoint)Socket.LocalEndPoint).Port, _remoteIEP.Address, _remoteIEP.Port);
-
-
+```
+### Boot images
+```
 mkbootimg.py --header_version 4 --kernel Image --dtb molchip-kernel.dtb --ramdisk ramdisk.img  --os_version 5.10.109 --os_patch_level 2022-11-08 --board FY12B -o boot.img --vendor_boot vendor_boot.img
 
 /home/FULLHAN/zhengk315/aosp/system/tools/mkbootimg/
@@ -51,6 +50,9 @@ mkbootimg.py --header_version 4 --kernel Image --dtb molchip-kernel.dtb --ramdis
 avbtool.py add_hash_footer 	--image boot.img                --partition_size 52428800 	--partition_name boot 		--key testkey_rsa4096.pem --algorithm SHA256_RSA4096
 avbtool.py add_hash_footer 	--image boot.new.img                --partition_size 52428800 	--partition_name boot 		--key testkey_rsa4096.pem --algorithm SHA256_RSA4096
 avbtool.py add_hash_footer 	--image vendor_boot.img --partition_size 11534336 		--partition_name vendor_boot 	--key testkey_rsa4096.pem --algorithm SHA256_RSA4096
+```
+### System and Vender images
+```
 /home/FULLHAN/zhengk315/aosp/external/avb/avbtool.py add_hashtree_footer 	--image system.img 	--partition_size 3029336064 	--partition_name system 		--key testkey_rsa4096.pem --algorithm SHA256_RSA4096 --do_not_generate_fec
 /home/FULLHAN/zhengk315/aosp/external/avb/avbtool.py add_hashtree_footer 	--image vendor.img 	--partition_size 524288000 	--partition_name vendor 		--key testkey_rsa4096.pem --algorithm SHA256_RSA4096 --do_not_generate_fec
 
@@ -66,9 +68,10 @@ mkfs.ext4 userdata.img
 	--include_descriptors_from_image vendor.img
 
 /home/FULLHAN/zhengk315/aosp/external/avb/avbtool.py make_vbmeta_image --output vbmeta.img --key testkey_rsa4096.pem --algorithm SHA256_RSA4096 --include_descriptors_from_image boot.img --include_descriptors_from_image vendor_boot.img --include_descriptors_from_image system.img.bck --include_descriptors_from_image vendor.img
+```
 
-
-
+### Burn images
+```
 tftpboot 0x150000000 fy12b/emmc_user_data.img
 mmc write 0x150000000 0 0x806
 
@@ -104,9 +107,10 @@ mount -t nfs -o nolock,addr=192.168.72.20 192.168.72.20:/smb/fy12b /mnt/nfs
 dd if=system.img of=/dev/mmcblk0p4
 dd if=vendor.img of=/dev/mmcblk0p5
 dd if=userdata.img of=/dev/mmcblk0p6
-
+```
+### Other commands
+```
 /home/FULLHAN/zhengk315/aosp/out/host/linux-x86/bin/build_image vendor vendor_image_info.txt vendor.img .
-/home/FULLHAN/zhengk315/aosp/out/host/linux-x86/bin/build_image system system_image_info.txt system.img .
 
 
 mount -o rw,remount /vendor
