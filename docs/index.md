@@ -5,7 +5,7 @@ For full documentation visit [mkdocs.org](https://www.mkdocs.org).
 ## fy12b image build
 Compile and build bootloader images.
 ### Bootloader
-```
+```html
 make CROSS_COMPILE=aarch64-fullhan-linux-gnu-   PLAT=fullhan SPD=opteed BL32=/home/FULLHAN/zhengk315/fy12b/tee-pager_v2.bin  BL33=/home/FULLHAN/zhengk315/fy12b/u-boot-dtb.bin  all fip
 
 ./build.sh CROSS_COMPILE=aarch64-fullhan-linux-gnu- BL32=/data1/zhengk315/fy12/tee-pager_v2.bin  BL33=/data1/zhengk315/fy12/u-boot-dtb2.bin  all fip
@@ -27,7 +27,7 @@ dd if=bl1.img of=bl1-with-spl.img  bs=64k seek=1
 ```
 ### Boot images
 Make boot and vendor boot images and add hash footers.
-```
+```html
 mkbootimg.py --header_version 4 --kernel Image --dtb molchip-kernel.dtb --ramdisk ramdisk.img  --os_version 5.10.109 --os_patch_level 2022-11-08 --board FY12B -o boot.img --vendor_boot vendor_boot.img
 
 /home/FULLHAN/zhengk315/aosp/system/tools/mkbootimg/mkbootimg.py \
@@ -45,7 +45,7 @@ mkbootimg.py --header_version 4 --kernel Image --dtb molchip-kernel.dtb --ramdis
 ```
 ### System and Vender images
 Make verdor image, then add hashtree footer to system and vendor images.
-```
+```html
 /home/FULLHAN/zhengk315/aosp/out/host/linux-x86/bin/build_image vendor vendor_image_info.txt vendor.img
 /home/FULLHAN/zhengk315/aosp/external/avb/avbtool.py add_hashtree_footer \
     --image system.img --partition_size 3029336064 --partition_name system \
@@ -57,7 +57,7 @@ Make verdor image, then add hashtree footer to system and vendor images.
 ```
 ### Userdata image
 Make userdata image and add its hash footer.
-```
+```html
 dd if=/dev/zero of=userdata.img bs=1M count=600
 mkfs.ext4 userdata.img
 
@@ -67,7 +67,7 @@ mkfs.ext4 userdata.img
 ```
 ### Vbmeta image
 Make vbmeta image using images built previously.
-```
+```html
 /home/FULLHAN/zhengk315/aosp/external/avb/avbtool.py make_vbmeta_image \
         --output vbmeta.img --key testkey_rsa4096.pem --algorithm SHA256_RSA4096 \
 	    --include_descriptors_from_image boot.img \
@@ -78,7 +78,7 @@ Make vbmeta image using images built previously.
 
 ### Burn images
 Burn images via tftp or **dd** command.
-```
+```html
 tftpboot 0x150000000 fy12b/emmc_user_data.img
 mmc write 0x150000000 0 0x806
 
@@ -112,7 +112,7 @@ dd if=vendor.img of=/dev/mmcblk0p5
 dd if=userdata.img of=/dev/mmcblk0p6
 ```
 ### Other commands
-```
+```html
 /home/FULLHAN/zhengk315/aosp/out/host/linux-x86/bin/build_image vendor vendor_image_info.txt vendor.img .
 
 mount -o rw,remount /vendor
