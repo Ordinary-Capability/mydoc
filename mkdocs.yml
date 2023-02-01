@@ -1,6 +1,7 @@
 site_name: AllenDocs
 nav:
     - Home: index.md
+    - Fy12b: fy12b.md
     - Openwrt: openwrt.md
     - About: about.md
 
