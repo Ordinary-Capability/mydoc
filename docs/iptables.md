@@ -60,14 +60,15 @@ iptables-save > /etc/iptables/rules.v4
 ip6tables-save > /etc/iptables/rules.v6
 ```
 
-test url
-```
-wget http://sdkdown:yiQQ$^*sJ8@192.168.0.101/sdktrack/release?getsdk=FH885XV200_IPC_V1.1.0_20210716
-```
 
 ## http transparent redirection
 http dowaload proxy for 192.168.17.50
 ```
 iptables -t nat -A PREROUTING -s 192.168.17.50 -p tcp --dport 9817 -j DNAT --to-destination 192.168.0.101:80
 iptables -t nat -A POSTROUTING -s 192.168.17.50 -d 192.168.0.101 -j SNAT --to-source 192.168.17.52
+```
+
+test url
+```
+wget http://sdkdown:yiQQ$^*sJ8@192.168.0.101/sdktrack/release?getsdk=FH885XV200_IPC_V1.1.0_20210716
 ```

@@ -3,13 +3,14 @@ nav:
     - Home: index.md
     - Fy12b: fy12b.md
     - Openwrt: openwrt.md
+    - Iptables: iptables.md
     - About: about.md
 
 theme:
   name: material
   features:
     - content.code.copy
-    
+
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
