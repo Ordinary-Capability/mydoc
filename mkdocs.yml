@@ -5,7 +5,17 @@ nav:
     - Openwrt: openwrt.md
     - About: about.md
 
-theme: readthedocs
+theme:
+  name: material
+  features:
+    - content.code.copy
+    
+markdown_extensions:
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
 
 
 

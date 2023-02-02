@@ -10,7 +10,7 @@ git clone https://git.openwrt.org/openwrt/openwrt.git
 git checkout v22.03.2
 ```
 * Add some custom source to *feeds.conf.default*
-```html
+```html linenums="1"
 src-git-full packages https://git.openwrt.org/feed/packages.git^dba8a0102e5965cad58a871335002e9c964b6719
 src-git-full luci https://git.openwrt.org/project/luci.git^96ec0cd3ccfe954f13fd5a337efdd70374dde03f
 src-git-full routing https://git.openwrt.org/feed/routing.git^85028704f688a6768d3f10d5d3c10a799a121e0d
