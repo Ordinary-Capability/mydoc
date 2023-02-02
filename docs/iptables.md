@@ -38,7 +38,7 @@ iptables  -nvL; iptables -t nat -nvL
 ```
 
 Enable linux kernel ipv4 forward
-```
+```hl_lines="1"
 sysctl -w net.ipv4.ip_forward=1
 cat /proc/sys/net/ipv4/ip_forward
 ```
