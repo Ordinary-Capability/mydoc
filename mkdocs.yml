@@ -5,6 +5,7 @@ nav:
     - GitUsage: gitusage.md
     - Openwrt: openwrt.md
     - Iptables: iptables.md
+    - ffmpegUsage: ffmpegusage.md
     - About: about.md
 
 theme:
