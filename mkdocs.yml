@@ -5,8 +5,8 @@ nav:
     - GitUsage: gitusage.md
     - Openwrt: openwrt.md
     - Iptables: iptables.md
-    - ffmpegUsage: ffmpegusage.md
-    - About: about.md
+    - FfmpegUsage: fmpegusage.md
+    - Aptusage: aptusage.md
 
 theme:
   name: material
