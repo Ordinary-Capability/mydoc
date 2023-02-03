@@ -2,6 +2,7 @@ site_name: AllenDocs
 nav:
     - Home: index.md
     - Fy12b: fy12b.md
+    - GitUsage: gitusage.md
     - Openwrt: openwrt.md
     - Iptables: iptables.md
     - About: about.md
