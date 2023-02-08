@@ -40,7 +40,6 @@ search the target file
 ```
 apt-file search /usr/lib32/libstdc++.so.6
 ```
-
 or use *dpkg* command
 ```
 root@nice-ponies-2:~# dpkg -S libstdc++.so.6
