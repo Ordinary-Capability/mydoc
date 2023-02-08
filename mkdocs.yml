@@ -7,6 +7,7 @@ nav:
     - Iptables: iptables.md
     - FfmpegUsage: ffmpegusage.md
     - Aptusage: aptusage.md
+    - GitLabUsage: gitlabusage.md
 
 theme:
   name: material
