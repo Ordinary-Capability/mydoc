@@ -24,4 +24,4 @@ jobs:
         run: mkdocs build
 
       - name: copy site to host dir
-        run: cp -fr site /root/mydoc
+        run: cp -r site /var/www/mydoc
