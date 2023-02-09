@@ -39,4 +39,6 @@ jobs:
         run: |
           echo mkdocs build ...
           mkdocs build
-
+          
+      - name: copy site to host dir
+        run: cp -r site /var/www/mydoc
