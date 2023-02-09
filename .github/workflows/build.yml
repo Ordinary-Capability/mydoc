@@ -22,3 +22,6 @@ jobs:
 
       - name: Build static site
         run: mkdocs build
+
+      - name: copy site to host dir
+        run: cp -r site /root/mydoc
