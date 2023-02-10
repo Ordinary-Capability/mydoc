@@ -8,6 +8,7 @@ nav:
     - FfmpegUsage: ffmpegusage.md
     - Aptusage: aptusage.md
     - GitLabUsage: gitlabusage.md
+    - LinuxCommand: linuxcommand.md
 
 theme:
   name: material
