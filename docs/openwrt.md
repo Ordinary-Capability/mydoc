@@ -59,13 +59,14 @@ make distclean //remove target, toolchain, tools, cache, config, download
 ```
 
 ## Build single package
-Select the package to compile in make menuconfig, or the make package/../compile wont acturely compile the package
+Select the package to compile in make menuconfig, or the *make* wont acturely compile the package
 Remove tmp directory before compile
 Run compile
 ```html
-make package/../compile 
+make package/feeds/kenzo/luci-app-passwall2/compile 
 ```
 Find the output packages in *bin/packages* directory
+Note: User may need to update&install the lastest feeds to get the lastest commits of the target package.
 
 ## References
 1. https://openwrt.org/docs/guide-developer/toolchain/single.package
