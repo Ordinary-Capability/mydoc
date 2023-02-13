@@ -27,6 +27,12 @@ sudo gitlab-rake gitlab:check SANITIZE=true
 To fix: *sudo chown -R registry:registry /var/opt/gitlab/gitlab-rails/shared/registry*
 
 
+- Sign in as *gitlab-runner* user
+```
+sudo su - gitlab-runner
+```
+
+
 ## Reference
 https://docs.gitlab.com/ee/raketasks/backup_gitlab.html
 
