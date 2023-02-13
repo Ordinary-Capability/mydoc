@@ -26,7 +26,7 @@ sudo gitlab-rake gitlab:check SANITIZE=true
 [Known issue](https://gitlab.com/gitlab-org/gitlab-foss/-/issues/62759/?_gl=1*novgys*_ga*MTg5NTc2OTUwNy4xNjc1MDcwNzkw*_ga_ENFH3X7M5Y*MTY3NTgzNzcyNy4xNy4xLjE2NzU4Mzk3NjEuMC4wLjA.)  
 To fix: *sudo chown -R registry:registry /var/opt/gitlab/gitlab-rails/shared/registry*
 
-
+## Gitlab-runner Usage
 - Sign in as *gitlab-runner* user
 ```
 sudo su - gitlab-runner
