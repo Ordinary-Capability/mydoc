@@ -11,6 +11,17 @@ git commit -m <comment>
 git commit --amend --no-edit
 ```
 
+- Merge with no auto commit
+```
+git merge <target_branch> --no-commit --no-ff
+```
+
+- Remove untracked files
+```
+git clean -n #dry run
+git clean -fd #f for force, d for directory
+```
+
 - git submodule   
 A repoA can be linked to a subdirectory in repoB
 ```
