@@ -2,7 +2,8 @@
 
 - cherry-pick with no auto commit
 ```
-git cherry-pick -n <hash>
+git cherry-pick -n <hash> #single commit
+git cherry-pick -n <hash>..<hash> #a range of commits
 git commit -m <comment>
 ```
 
