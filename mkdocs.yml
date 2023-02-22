@@ -10,6 +10,7 @@ nav:
     - GitLabUsage: gitlabusage.md
     - LinuxCommand: linuxcommand.md
     - Cryptography: cryptography.md
+    - Electron: electron.md
 
 theme:
   name: material
