@@ -15,6 +15,8 @@ git commit --amend --no-edit
 - Merge with no auto commit
 ```
 git merge <target_branch> --no-commit --no-ff
+git restore --staged <file>  #undo some added file
+git merge --continue  #continue merge
 ```
 
 - Remove untracked files
