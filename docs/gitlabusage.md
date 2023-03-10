@@ -32,6 +32,55 @@ To fix: *sudo chown -R registry:registry /var/opt/gitlab/gitlab-rails/shared/reg
 sudo su - gitlab-runner
 ```
 
+## Gitlab-CI/CD
+- .gitlab-ci.yml template
+```
+before_script:
+  - git config --list
+  - export COMMIT_TIME=$(date '+%Y-%m-%d')
+
+variables:
+  GIT_STRATEGY: clone
+
+stages:
+  - build:a
+  - build:b
+  - test
+  - release
+  - deploy
+
+job_build_a:
+  stage: build:a
+  only:
+  script:
+    - echo "Build job a start ..."
+#  artifacts:
+#    expire_in: 7 days
+#    paths:
+#      - aosp/out/target/product/fy12b/*.img
+#    name: aosp-fy12b-$COMMIT_TIME
+
+job_build_b:
+  stage: build:b
+  only:
+  script:
+    - echo "Build job b start ..."
+
+job_test:
+  stage: test
+  script:
+    - echo "test job."
+    
+job_release:
+  stage: release
+  script:
+    - echo "Job release ..."
+    
+job_deploy:
+  stage: deploy
+  script:
+    - echo "Job deploy ..."
+```
 
 ## Reference
 https://docs.gitlab.com/ee/raketasks/backup_gitlab.html
