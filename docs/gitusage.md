@@ -25,6 +25,12 @@ git clean -n #dry run
 git clean -fd #f for force, d for directory
 ```
 
+- Reset From Remote Branch
+```
+git fetch origin
+git reset --hard origin/master
+```
+
 - git submodule   
 A repoA can be linked to a subdirectory in repoB
 ```
