@@ -13,3 +13,8 @@
 
 - difference between manytoone and foreign key  
     To define a many-to-one relationship, use ForeignKey
+    
+- Modify a existing table char set
+    ```
+    ALTER TABLE ToolDownload_tag CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
+    ```
