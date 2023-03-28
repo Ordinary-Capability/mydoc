@@ -31,6 +31,13 @@ git fetch origin
 git reset --hard origin/master
 ```
 
+- set branch to current ref
+```
+git branch -f master HEAD
+git checkout master
+```
+Reference https://stackoverflow.com/questions/26570242/how-to-move-master-to-head
+
 - git submodule   
 A repoA can be linked to a subdirectory in repoB
 ```
