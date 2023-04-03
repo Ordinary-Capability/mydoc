@@ -22,8 +22,9 @@ the script can be found at
 
 4. Some other useful commands are
     ```
-    'run cts --module <module_name>'
-    'run cts --module <module_name> --test <test_name>'
-    'run cts --shard-count <number of shards> //all connected devices must be running the same build
-    'run cts --help'
+    run cts --module <module_name>
+    run cts --module <module_name> --test <test_name>
+    run cts --shard-count <number of shards>
+    run cts --help
     ```
+    Note: when run cts shard, all connected devices must be running the same build.
