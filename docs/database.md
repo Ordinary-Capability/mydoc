@@ -18,3 +18,9 @@
     ```
     ALTER TABLE ToolDownload_tag CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
     ```
+    
+ - Simple data backup and restore operation
+    ```
+    mysqldump -u springuser -p spring_rhino_test test_case > case.sql //dump table test_case to case.sql 
+    mysql -u springuser -p spring_rhino_test < case.sql //restore case.sql to table test_case
+    ```
