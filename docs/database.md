@@ -14,8 +14,11 @@
 - difference between manytoone and foreign key  
     To define a many-to-one relationship, use ForeignKey
     
-- Modify a existing table char set
+- Database SET/COLLATION operations
     ```
+    SHOW CHARACTER SET;
+    SHOW COLLATION LIKE 'utf8bm4%';
+    CREATE DATABASE database_name CHARACTER SET character_set_name COLLATE collation_name;
     ALTER TABLE ToolDownload_tag CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
     ```
     
