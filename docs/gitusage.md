@@ -6,6 +6,10 @@ git cherry-pick -n <hash> #single commit
 git cherry-pick -n <hash>..<hash> #a range of commits
 git commit -m <comment>
 ```
+- set tracking remote branch
+```
+git remote set-branches origin *
+```
 
 - append current commit into previous one with no message edit(use the old commit message)
 ```
