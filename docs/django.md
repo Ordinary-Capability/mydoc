@@ -1,4 +1,9 @@
 # Django Basic Notes
+- Start new django project and app
+  ```
+  django-admin startproject <site_name>
+  python manage.py startapp <app_name>
+  ```
 - static collection command   
     ```
     python manage.py collectstatic
