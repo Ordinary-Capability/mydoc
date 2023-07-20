@@ -19,6 +19,7 @@
     SHOW CHARACTER SET;
     SHOW COLLATION LIKE 'utf8bm4%';
     CREATE DATABASE database_name CHARACTER SET character_set_name COLLATE collation_name;
+    ALTER  DATABASE databasename CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
     ALTER TABLE ToolDownload_tag CONVERT TO CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
     ```
     
