@@ -1,13 +1,20 @@
 # Database Usage notes
 ## Mariadb
-- drop table with prefix  
+- Drop tables with prefix name match 
     ```
     SELECT CONCAT( 'DROP TABLE ', GROUP_CONCAT(table_name) , ';' )  AS statement FROM information_schema.tables  WHERE table_name LIKE 'ipc_%';
     ```
 
+- Drop all tables in one database
+    ```
+    SELECT CONCAT('DROP TABLE IF EXISTS ', GROUP_CONCAT(table_name), ';')  FROM information_schema.tables  WHERE table_schema = 'database_name';
+    ```
+    The SQL command above generates a one line command. Execute that command to drop all tables in 'database_name'.
+    You may need to disable foreign key check before execute that command.
+
 - drop table when foreign key deadlock  
     ```
-    SET foreign_key_checks=0; 
+    SET foreign_key_checks=0;
     SET foreign_key_checks=1;
     ```
 
