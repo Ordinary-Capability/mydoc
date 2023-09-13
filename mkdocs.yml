@@ -15,6 +15,7 @@ nav:
     - Django: django.md
     - Database: database.md
     - Android: android.md
+    - Uwsgi: uwsgi.md
 
 theme:
   name: material
