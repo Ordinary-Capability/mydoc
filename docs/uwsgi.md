@@ -1,4 +1,4 @@
-# install for ubuntu/debian
+# Common tips on ubuntu/debian
 - Requirements
 ```
 sudo apt-get install build-essential
@@ -8,4 +8,8 @@ sudo apt install python3.8-dev # install python dev package for python3.8
 python3.8 -m pip install uwsgi
 
 export PATH=/home/sqa02/.local/bin:$PATH # add local bin path to PATH
+```
+- Run app in python venv
+```
+uwsgi  -H  <path_to_python_venv_root_dir>
 ```
