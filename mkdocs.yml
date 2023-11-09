@@ -16,6 +16,7 @@ nav:
     - Database: database.md
     - Android: android.md
     - Uwsgi: uwsgi.md
+    - Avalonia: avalonia.md
 
 theme:
   name: material
