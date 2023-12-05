@@ -1,5 +1,10 @@
 # Common Git Usage notes
 
+- Clone with proxy setting in one command
+```
+git clone --config http.proxy=http://127.0.0.1:10809 https://github.com/wieslawsoltes/Dock.git
+```
+
 - cherry-pick with no auto commit
 ```
 git cherry-pick -n <hash> #single commit
