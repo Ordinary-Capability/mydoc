@@ -18,6 +18,7 @@ nav:
     - Uwsgi: uwsgi.md
     - Avalonia: avalonia.md
     - Regex: regex.md
+    - CodeSigning: codesigning.md
 
 theme:
   name: material
